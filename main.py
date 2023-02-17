@@ -138,7 +138,7 @@ class WebCrawler:
 
 async def main():
     filterer = UrlFilterer(
-        allowed_domains={'mcoding.io'},
+        allowed_domains={'skillbox.ru'},
         allowed_schemes={'http', 'https'},
         allowed_filetypes={'.html', '.php', ''}
     )
@@ -147,7 +147,8 @@ async def main():
     async with httpx.AsyncClient() as client:
         crawler = WebCrawler(
             client=client,
-            urls=['https://mcoding.io/'],
+            urls=['https://skillbox.ru/media/code/parsing-sayta-vmeste-s-python-i-bibliotekoy-beautiful-soup-prostaya'
+                  '-instruktsiya-v-tri-shaga/'],
             filter_url=filterer.filter_url,
             workers=5,
             limit=30,)
